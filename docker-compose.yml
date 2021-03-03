@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "9090:80"
+    volumes:
+      - ./src:/src
+      - ./site.conf:/etc/nginx/conf.d/site.conf
+    links:
+      - php
+
+  php:
+    build: .
+    volumes:
+      - ./src:/src
+  db:
+    image: mysql
+    ports:
+      - "3333:3306"
+    command: --default-authenfication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: jewerlyshop
+      MYSQL_ROOT_PASSWORD: Vitalik*love23
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql

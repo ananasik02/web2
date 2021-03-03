@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="mystyle.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>Web lab 1</title>
+</head>
+<body>
+
+<form method="POST" action="play.html">
+
+    <input id="userId" name="userId" hidden value="1" required>
+
+
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" minlength="2" maxlength="15" required pattern="[a-zA-Z0-9]+" placeholder="Nadia"><br>
+
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" minlength="2" maxlength="15" required pattern="[a-zA-Z0-9]+" placeholder="Tykhoniuk"><br>
+
+    <label for="info">Write something about yourself:</label><br>
+    <textarea name="info" style="width:250px;height:150px;"></textarea><br>
+
+    <p>Please select your gender:</p>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label>
+
+  <br>  
+
+  <p>Please select your age:</p>
+  <input type="radio" id="age1" name="age" value="30">
+  <label for="age1">0 - 30</label><br>
+  <input type="radio" id="age2" name="age" value="60">
+  <label for="age2">31 - 60</label><br>  
+  <input type="radio" id="age3" name="age" value="100">
+  <label for="age3">61 - 100</label><br><br>
+
+    <label for="info">Choose your chess level:</label><br>
+    <select name="level">
+      <option>Beginner</option>
+      <option>Pre-intermidiate</option>
+      <option>Intermidiate</option>
+      <option>Upper-intermidiate</option>
+      <option>Advanced</option>
+      <option>Profi</option>
+    </select><br>
+
+    <label for="pw">Password:</label><br>
+    <input id="pw" name="pw" type="password" minlength="8" maxlength="15" required><br>
+
+    <button id="register" onclick="myFunction()">Start!</button>
+
+</form>
+
+
+</body>
+</html>
+
+<script>
+function myFunction() {
+  document.getElementById("register").style.color = "green";
+}
+</script>
